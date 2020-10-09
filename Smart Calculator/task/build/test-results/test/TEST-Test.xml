@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-09T06:59:21" hostname="DESKTOP-GKSSB9M" time="0.163">
+<testsuite name="Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-09T08:53:53" hostname="DESKTOP-GKSSB9M" time="0.18">
   <properties/>
-  <testcase name="start" classname="Test" time="0.163"/>
+  <testcase name="start" classname="Test" time="0.18"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-> 0 1
+> /exit
+Bye!
 ?[1;31m
 Start test 2?[0m
-> 1 0
+> 17 9
+26
+> -2 5
+3
+> 
+> 7
+7
+> /exit
+Bye!
 ?[1;31m
 Start test 3?[0m
-> 5 7
-?[1;31m
-Start test 4?[0m
-> 100 123
-?[1;31m
-Start test 5?[0m
-> -1 5
-?[1;31m
-Start test 6?[0m
-> 5 -2
-?[1;31m
-Start test 7?[0m
-> -300 -400
+> 100 200
+300
+> 500
+500
+> 300 -400
+-100
+> 
+> -500
+-500
+> 1 -1
+0
+> /exit
+Bye!
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
