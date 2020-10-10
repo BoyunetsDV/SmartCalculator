@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -11,6 +12,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Problems/Cause an exception" />
+            <option value="$PROJECT_DIR$/Problems/Converter to Double" />
+            <option value="$PROJECT_DIR$/Problems/Exception message" />
+            <option value="$PROJECT_DIR$/Problems/Handle arithmetic exception" />
+            <option value="$PROJECT_DIR$/Problems/Handle number format exception" />
+            <option value="$PROJECT_DIR$/Problems/Handle string exception" />
+            <option value="$PROJECT_DIR$/Problems/Handling strings" />
+            <option value="$PROJECT_DIR$/Problems/Integer division" />
+            <option value="$PROJECT_DIR$/Problems/The result of a game in Tic-Tac-Toe" />
             <option value="$PROJECT_DIR$/Smart Calculator/task" />
             <option value="$PROJECT_DIR$/util" />
           </set>
