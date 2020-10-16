@@ -119,6 +119,10 @@ topics:
   - title: The try-catch statement
     theory_id: 10622
   5:
+  - title: Regexps basics
+    theory_id: 7580
+  - title: Regexps in Kotlin
+    theory_id: 10721
   - title: Introduction to collections
     theory_id: 10390
   - title: Mutable Map
@@ -136,6 +140,10 @@ topics:
     theory_id: 5252
   - title: Queue
     theory_id: 5350
+  - title: List
+    theory_id: 10730
+  - title: Mutable List
+    theory_id: 11032
   7:
   - title: Objects
     theory_id: 6773
