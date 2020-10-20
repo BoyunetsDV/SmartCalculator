@@ -4,7 +4,7 @@ import java.lang.Exception
 import java.util.*
 import kotlin.math.pow
 
-val variables = mutableMapOf<String, Int>()
+val variables = mutableMapOf<String, String>()
 val priorities = mutableMapOf("+" to 1, "-" to 1, "*" to 2, "/" to 2, "^" to 3)
 var input = ""
 
@@ -65,7 +65,7 @@ fun assignVariable() {
         if (variables.containsKey(valuesInInput[1])) {
             variables[valuesInInput[0]] = variables[valuesInInput[1]]!!
         } else {
-            variables[valuesInInput[0]] = valuesInInput[1].toInt()
+            variables[valuesInInput[0]] = valuesInInput[1]
         }
     } catch (exp: Exception) {
         println("Invalid assignment")
@@ -115,7 +115,7 @@ fun calculate() {
 fun getPostfixFormInputQueue(): List<String> {
     try {
         val seq = input.trim()
-                .split("(?= )|(?<= )|(?=[()\\^])|(?<=[()\\^])".toRegex())
+                .split("(?= )|(?<= )|(?=[()^])|(?<=[()^])".toRegex())
                 .toMutableList()
         seq.removeAll { el -> el.isEmpty() || el.isBlank() }
 
@@ -177,34 +177,34 @@ fun getReplaceValue(value: String): String {
     return result.toString()
 }
 
-fun calculatePostfixQueue(queue: List<String>): Int {
+fun calculatePostfixQueue(queue: List<String>): String {
     try {
         val stack = Stack<String>()
         for (el in queue) {
             if (el[0].isLetterOrDigit() || el.length > 1 && el[1].isLetterOrDigit()) {
                 stack.push(getVariable(el))
             } else if (el[0] in "+-/*^") {
-                val a2 = stack.pop().toInt()
-                val a1 = stack.pop().toInt()
-                stack.push(doArithmeticOperation(a1, a2, el[0]).toString())
+                val a2 = stack.pop()
+                val a1 = stack.pop()
+                stack.push(doArithmeticOperation(a1, a2, el[0]))
             }
         }
         if (stack.size != 1) {
             throw InputMismatchException("Invalid expression")
         }
-        return stack.pop().toInt()
+        return stack.pop()
     } catch (exp: Exception) {
         throw InputMismatchException("Invalid expression")
     }
 }
 
-fun doArithmeticOperation(v1: Int, v2: Int, operator: Char): Int {
+fun doArithmeticOperation(v1: String, v2: String, operator: Char): String {
     return when (operator) {
-        '-' -> v1 - v2
-        '+' -> v1 + v2
-        '*' -> v1 * v2
-        '/' -> v1 / v2
-        '^' -> v1.toDouble().pow(v2.toDouble()).toInt()
+        '-' -> (v1.toBigInteger() - v2.toBigInteger()).toString()
+        '+' -> (v1.toBigInteger() + v2.toBigInteger()).toString()
+        '*' -> (v1.toBigInteger() * v2.toBigInteger()).toString()
+        '/' -> (v1.toBigInteger() / v2.toBigInteger()).toString()
+        '^' -> v1.toBigInteger().pow(v2.toInt()).toString()
         else -> throw ArithmeticException("Invalid operation")
     }
 }
